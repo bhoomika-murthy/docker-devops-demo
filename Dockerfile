@@ -1,16 +1,14 @@
-# Docker DevOps Demo
+FROM python:3.10-slim
 
-A simple Flask application containerized using Docker as part of a DevOps learning project.
+WORKDIR /app
 
-## Tech Stack
-- Python (Flask)
-- Docker
-- Git
-- AWS CLI (IAM, STS)
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-## How to Run Locally
+COPY app.py .
 
-Build the Docker image:
-```bash
-docker build -t docker-devops-demo .
+EXPOSE 5000
+
+CMD ["python", "app.py"]
+
 
