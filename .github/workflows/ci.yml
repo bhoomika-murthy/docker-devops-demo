@@ -23,4 +23,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/docker-devops-demo:latest
+          tags: bhoomikadevops/docker-devops-demo:latest
+
